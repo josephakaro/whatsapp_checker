@@ -34,10 +34,7 @@ function Nav() {
 							<a>Products</a>
 							<ul className="p-2 text-green-700">
 								<li>
-									<a>Submenu 1</a>
-								</li>
-								<li>
-									<a>Submenu 2</a>
+									<Link href={'/validator'}>Validator</Link>
 								</li>
 							</ul>
 						</li>
@@ -45,10 +42,7 @@ function Nav() {
 							<a>Solutions</a>
 							<ul className="p-2 text-green-700">
 								<li>
-									<a>Submenu 1</a>
-								</li>
-								<li>
-									<a>Submenu 2</a>
+									<Link href={'/'}>Bulk Validations</Link>
 								</li>
 							</ul>
 						</li>
@@ -56,19 +50,33 @@ function Nav() {
 							<a>Resources</a>
 							<ul className="p-2 text-green-700">
 								<li>
-									<a>Submenu 1</a>
+									<a>FAQs</a>
 								</li>
 								<li>
-									<a>Submenu 2</a>
+									<Link href={'/docs'}>Docs</Link>
 								</li>
 							</ul>
 						</li>
 						<li>
-							<a>Docs</a>
+							<Link href="https://github.com/josephakaro/whatsapp_checker">
+								GitHub
+							</Link>
 						</li>
+
 						<li>
 							<Link href={'/pricing'}>Pricing</Link>
 						</li>
+						<li>
+							<Link href={'/contact'}>Contact</Link>
+						</li>
+						<div className="navbar-end mt-5">
+							<Link
+								href={'/login'}
+								className="btn w-full bg-green-500"
+							>
+								Log in
+							</Link>
+						</div>
 					</ul>
 				</div>
 				<Link href={'/'} className="btn btn-ghost text-xl text-white">
@@ -120,13 +128,18 @@ function Nav() {
 					</li>
 				</ul>
 			</div>
-			<div className="navbar-end gap-4">
+			<div className="navbar-end gap-4 hidden sm:flex">
 				<Link href={'/contact'} className="text-white">
 					Contact
 				</Link>
 				<Link href={'/login'} className="btn text-white btn-ghost">
 					Log in
 				</Link>
+				<Link href={'/signup'} className="btn bg-white">
+					Sign Up
+				</Link>
+			</div>
+			<div className="navbar-end gap-4 sm:hidden">
 				<Link href={'/signup'} className="btn bg-white">
 					Sign Up
 				</Link>
