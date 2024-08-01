@@ -1,9 +1,7 @@
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Nav from '@components/Nav';
 import { Analytics } from '@vercel/analytics/react';
-
-const inter = Inter({ subsets: ['latin'] });
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 export const metadata = {
 	title: 'WhatsApp Checker',
@@ -18,6 +16,7 @@ export default function RootLayout({ children }) {
 				{children}
 			</body>
 			<Analytics />
+			<SpeedInsights />
 		</html>
 	);
 }
