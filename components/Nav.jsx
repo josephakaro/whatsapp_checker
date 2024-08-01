@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function Nav() {
 	return (
-		<div className="navbar bg-green-700 px-5">
+		<div className="navbar bg-green-700 sm:px-5">
 			<div className="navbar-start">
 				<div className="dropdown">
 					<div
@@ -139,7 +139,7 @@ function Nav() {
 					Sign Up
 				</Link>
 			</div>
-			<div className="navbar-end gap-4 sm:hidden">
+			<div className="navbar-end gap-4 btn-sm sm:hidden">
 				<Link href={'/signup'} className="btn bg-white">
 					Sign Up
 				</Link>
