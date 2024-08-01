@@ -19,9 +19,7 @@ const Home = () => {
 	}, []);
 
 	return (
-		<div className="h-full">
-			<h1>Home</h1>
-		</div>
+		<div className="flex flex-col items-center justify-center h-full"></div>
 	);
 };
 

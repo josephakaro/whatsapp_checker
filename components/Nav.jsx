@@ -72,7 +72,7 @@ function Nav() {
 					</ul>
 				</div>
 				<Link href={'/'} className="btn btn-ghost text-xl text-white">
-					isWhatsApp
+					WhatsApp Checker
 				</Link>
 			</div>
 			<div className="navbar-center hidden lg:flex text-white">
@@ -82,9 +82,7 @@ function Nav() {
 							<summary>Products</summary>
 							<ul className="p-2 text-green-700 min-w-44">
 								<li>
-									<Link href="/validator">
-										WhatsApp Validator
-									</Link>
+									<Link href="/validator">Validator</Link>
 								</li>
 							</ul>
 						</details>
@@ -123,8 +121,15 @@ function Nav() {
 				</ul>
 			</div>
 			<div className="navbar-end gap-4">
-				<a className="btn btn-ghost">Log in</a>
-				<a className="btn bg-white">Sign Up</a>
+				<Link href={'/contact'} className="text-white">
+					Contact
+				</Link>
+				<Link href={'/login'} className="btn text-white btn-ghost">
+					Log in
+				</Link>
+				<Link href={'/signup'} className="btn bg-white">
+					Sign Up
+				</Link>
 			</div>
 		</div>
 	);
