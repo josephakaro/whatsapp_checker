@@ -1,4 +1,4 @@
-import React from 'react';
+'use client';
 import Link from 'next/link';
 
 function Nav() {
@@ -28,7 +28,7 @@ function Nav() {
 					</div>
 					<ul
 						tabIndex={0}
-						className="menu menu-sm dropdown-content bg-base-100  rounded-box z-[1] mt-3 w-52 p-2 shadow"
+						className="menu menu-sm dropdown-content bg-base-100 rounded-lg z-[1] mt-3 w-[50vw] p-2 shadow"
 					>
 						<li>
 							<a>Products</a>
@@ -69,17 +69,20 @@ function Nav() {
 						<li>
 							<Link href={'/contact'}>Contact</Link>
 						</li>
-						<div className="navbar-end mt-5">
+						<div className="navbar-end w-full mt-5">
 							<Link
 								href={'/login'}
-								className="btn w-full bg-green-500"
+								className="btn  w-full rounded-lg text-white bg-green-700 hover:bg-green-800"
 							>
 								Log in
 							</Link>
 						</div>
 					</ul>
 				</div>
-				<Link href={'/'} className="btn btn-ghost text-xl text-white">
+				<Link
+					href={'/'}
+					className="btn btn-ghost sm:text-xl text-sm text-white"
+				>
 					WhatsApp Checker
 				</Link>
 			</div>
@@ -132,15 +135,18 @@ function Nav() {
 				<Link href={'/contact'} className="text-white">
 					Contact
 				</Link>
-				<Link href={'/login'} className="btn text-white btn-ghost">
+				<Link
+					href={'/login'}
+					className="btn text-white rounded-lg btn-ghost"
+				>
 					Log in
 				</Link>
-				<Link href={'/signup'} className="btn bg-white">
+				<Link href={'/signup'} className="btn rounded-lg bg-white">
 					Sign Up
 				</Link>
 			</div>
 			<div className="navbar-end gap-4 btn-sm sm:hidden">
-				<Link href={'/signup'} className="btn bg-white">
+				<Link href={'/signup'} className="btn rounded-lg bg-white">
 					Sign Up
 				</Link>
 			</div>
