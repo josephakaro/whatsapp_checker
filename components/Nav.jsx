@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import { IoCheckmarkDoneCircleOutline } from 'react-icons/io5';
 
 function Nav() {
 	return (
@@ -84,6 +85,9 @@ function Nav() {
 					className="btn btn-ghost sm:text-xl text-sm text-white"
 				>
 					WhatsApp Checker
+					<span className="text-white sm:text-3xl text-xl">
+						<IoCheckmarkDoneCircleOutline />
+					</span>
 				</Link>
 			</div>
 			<div className="navbar-center hidden lg:flex text-white">

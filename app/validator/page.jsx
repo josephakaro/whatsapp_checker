@@ -4,7 +4,7 @@ import React from 'react';
 const Validator = () => {
 	return (
 		<div className="w-full h-full">
-			<ValidatorCard />
+			<h1>Validator</h1>
 		</div>
 	);
 };

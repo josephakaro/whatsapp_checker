@@ -1,21 +1,28 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import axios from 'axios';
 
 const Home = () => {
 	const [number, setNumber] = useState('');
-	const [status, setStatus] = useState(false);
-	useEffect(() => {
-		const getNumber = () => {
-			const res = {
-				status: true,
-			};
-			const data = res;
-			setStatus(data);
-		};
-		getNumber();
-	}, []);
+	const [valid, setValid] = useState(null);
+	const [error, setError] = useState(null);
+
+	const handleSubmit = async (e) => {
+		e.preventDefault();
+		setError(null);
+		setValid(null);
+
+		try {
+			const res = await axios.post('/api/validator', { number });
+			setResponse(res.data);
+		} catch (err) {
+			setError(
+				err.response?.data?.error ||
+					'You Have Excceeded the daily 10 validations, try again tomorrow'
+			);
+		}
+	};
 
 	return (
 		<div className="flex flex-col items-center justify-center h-full bg-gradient-to-tl from-slate-200 to-slate-300">
@@ -29,26 +36,21 @@ const Home = () => {
 					numbers in real-time.
 				</p>
 			</div>
-			<div className="sm:w-[50vw] w-[80vw] flex flex-col items-center align-center">
-				<motion.h1
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 2 }}
-				>
-					{status === true ? (
-						<span className="text-green-600">
-							Your number {number} ✅ is a valid whatsApp number
-						</span>
-					) : (
-						<span className="text-red-600">
-							Your number {number} ⛔ is a valid whatsApp number
-						</span>
-					)}
-				</motion.h1>
+			<div className="flex flex-col items-center w-[80vw]">
+				{valid && (
+					<div className="text-green-400">
+						Your Number : {number} is Valid 🎉
+					</div>
+				)}
+				{error && <div className=" text-orange-700">{error} 😁</div>}
 			</div>
-			<form className="my-2 sm:my-4 flex flex-col gap-5 sm:w-[50vw] w-[80vw]">
+			<form
+				onSubmit={handleSubmit}
+				className="my-2 sm:my-4 flex flex-col gap-5 sm:w-[50vw] w-[80vw]"
+			>
 				<input
 					type="text"
+					value={number}
 					onChange={(e) => setNumber(e.target.value)}
 					placeholder="Enter number"
 					className="p-2 w-full mt-2 rounded-lg"
